@@ -153,6 +153,8 @@ describe.only('Multiple tests for BasicForm #3', () => {
         cy.get('[id="exampleInputPassword1"]').should("contain.value", userDetails.password);
        
         cy.get('div.col-md-6 span.custom-checkbox').eq(0).click();
+        //cy.get('div.col-md-6 span.custom-checkbox]').should('be.checked');
+        cy.get('.custom-checkbox.checked').should('exist');//checked checkbox
 
     })
 });
