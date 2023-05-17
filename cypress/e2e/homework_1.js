@@ -132,7 +132,7 @@ describe('Multiple tests for BasicForm #2', () => {
   '789qwerty', '789qwerty'));
 })
 
-describe('Multiple tests for BasicForm #3', () => {
+describe.only('Multiple tests for BasicForm #3', () => {
     let userDetails
     before(() => {
         cy.fixture('testData').then((data) => {//testData.json saved to (data)
@@ -152,5 +152,7 @@ describe('Multiple tests for BasicForm #3', () => {
         cy.get('[id="exampleInputPassword1"]').type(userDetails.password);
         cy.get('[id="exampleInputPassword1"]').should("contain.value", userDetails.password);
        
+        cy.get('div.col-md-6 span.custom-checkbox').eq(0).click();
+
     })
 });
